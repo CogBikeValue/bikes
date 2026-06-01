@@ -1,191 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Bike Value List</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-    <script>
-const searchBox = document.getElementById("searchBox");
-const sortMode = document.getElementById("sortMode");
+	<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+	<title>Bike Value List</title>
+	<link rel="stylesheet" href="style.css">
+	</head>
 
-function getCardName(card) {
-    return card.querySelector("span:first-child").textContent.trim();
-}
+	<body>
 
-function getCardValue(card) {
-    const text = card.querySelector("span:last-child")
-        .textContent
-        .replace(/,/g, "")
-        .trim();
+	<div class="background"></div>
 
-    return parseInt(text) || 0;
-}
+	<div class="container">
 
-function updateList() {
+	<h1>OFFICIAL Cog Bike Value List</h1>
+	<p class="subtitle">Updated June 2026</p>
 
-    const search = searchBox.value.toLowerCase();
+	<div class="controls">
+	<input
+type="text"
+id="searchBox"
+placeholder="🔍 Search bikes..."
+	>
 
-    document.querySelectorAll(".section").forEach(section => {
+	<select id="sortMode">
+	<option value="alphabetical">Alphabetical</option>
+	<option value="value">Value (Highest First)</option>
+	</select>
+	</div>
 
-        const cards = Array.from(
-            section.querySelectorAll(".card")
-        );
+	<div class="section">
 
-        cards.forEach(card => {
+	<h2>Fixie (A-Z)</h2>
+	<div class="card">
 
-            const bikeName =
-                getCardName(card).toLowerCase();
+	<div class="card"><span>Anchor Bridgestone</span><span>16,500</span></div>
+	<div class="card"><span>Anchor PHM9</span><span>19,500</span></div>
+	<div class="card"><span>Affinity Kissena</span><span>15,000</span></div>
+	<div class="card"><span>Bamboo Bike</span><span>20,000</span></div>
+	<div class="card"><span>BMC TM01</span><span>30,000</span></div>
+	<div class="card"><span>BT Ultra</span><span>35,000</span></div>
+	<div class="card"><span>Cervelo P3</span><span>10,000</span></div>
+	<div class="card"><span>Cervelo P3C</span><span>19,400</span></div>
+	<div class="card"><span>Cervelo T1</span><span>25,000</span></div>
+	<div class="card"><span>Cervelo T3</span><span>30,000</span></div>
+	<div class="card"><span>Cervelo T4</span><span>70,000</span></div>
+	<div class="card"><span>Cinelli 10th Anniversary</span><span>50,000</span></div>
+	<div class="card"><span>Cinelli Mash Gray</span><span>13,000</span></div>
+	<div class="card"><span>Cinelli Mash Parallax</span><span>16,000</span></div>
+	<div class="card"><span>Cinelli Vigorosa</span><span>17,000</span></div>
+	<div class="card"><span>Cinelli Vigorelli</span><span>25,000</span></div>
+	<div class="card"><span>Corima Cougar</span><span>50,000</span></div>
+	<div class="card"><span>Dolan Pre Cursa (BLACK)</span><span>14,000</span></div>
+	<div class="card"><span>Dolan Pre Cursa (GREY)</span><span>14,000</span></div>
+	<div class="card"><span>Dosnoventa Houston (Yellow)</span><span>18,000</span></div>
+	<div class="card"><span>Dosnoventa Maharishi</span><span>30,000</span></div>
+	<div class="card"><span>E11 GAF</span><span>47,000</span></div>
+	<div class="card"><span>FELT TK FRD</span><span>8,000</span></div>
+	<div class="card"><span>FES</span><span>38,000</span></div>
+	<div class="card"><span>Fuji Track</span><span>50,000</span></div>
+	<div class="card"><span>Fuji Track (Red)</span><span>25,100</span></div>
+	<div class="card"><span>Giant Omnium</span><span>20,000</span></div>
+	<div class="card"><span>Ingria Airpusher</span><span>12,700</span></div>
+	<div class="card"><span>Look KG</span><span>40,000</span></div>
+	<div class="card"><span>Look MADISON</span><span>27,200</span></div>
+	<div class="card"><span>Look Rama 496</span><span>25,000</span></div>
+	<div class="card"><span>LOOK 496 JAPAN TEAM 1</span><span>38,000</span></div>
+	<div class="card"><span>LOOK 496 JAPAN TEAM 2</span><span>38,000</span></div>
+	<div class="card"><span>LOOK 496 TRACK (BLACK)</span><span>30,000</span></div>
+	<div class="card"><span>LOOK 564 (OLD)</span><span>20,000</span></div>
+	<div class="card"><span>LOOK 989</span><span>10,000</span></div>
+	<div class="card"><span>LOW// Custom</span><span>30,000</span></div>
+	<div class="card"><span>Manila Jeprox Red</span><span>55,000</span></div>
+	<div class="card"><span>Missile Interpro (GREEN)</span><span>12,000</span></div>
+	<div class="card"><span>Missile Interpro (RED)</span><span>19,000</span></div>
+	<div class="card"><span>MOB Pro</span><span>7,000</span></div>
+	<div class="card"><span>NJS Bridgestone</span><span>10,000</span></div>
+	<div class="card"><span>NJS Panasonic</span><span>40,000</span></div>
+	<div class="card"><span>Littlewing NO22</span><span>11,000</span></div>
+	<div class="card"><span>Pinarello Maat Pista</span><span>34,000</span></div>
+	<div class="card"><span>Planet X</span><span>28,000</span></div>
+	<div class="card"><span>RTS</span><span>88,000</span></div>
+	<div class="card"><span>Skream V3</span><span>25,000</span></div>
+	<div class="card"><span>Specialized Allez Track</span><span>50,000</span></div>
+	<div class="card"><span>Specialized Langster</span><span>17,000</span></div>
+	<div class="card"><span>Talking Terps</span><span>45,000</span></div>
+	<div class="card"><span>Unknown Pulse</span><span>27,000</span></div>
+	<div class="card"><span>Velobike</span><span>70,000</span></div>
 
-            card.style.display =
-                bikeName.includes(search)
-                ? "flex"
-                : "none";
-        });
+	</div>
 
-        if (sortMode.value === "alphabetical") {
+	<div class="section">
 
-            cards.sort((a,b) =>
-                getCardName(a)
-                .localeCompare(getCardName(b))
-            );
+	<h2>Road Bikes (A-Z)</h2>
+	<div class="card"><span>Cannondale</span><span>15,000</span></div>
+	<div class="card"><span>Canyon Ultimate Fenix Alpecin</span><span>20,500</span></div>
+	<div class="card"><span>Trek Madone</span><span>17,000</span></div>
 
-        } else {
+	</div>
 
-            cards.sort((a,b) =>
-                getCardValue(b)
-                - getCardValue(a)
-            );
+	<div class="section">
 
-        }
+	<h2>Gamepasses (A-Z)</h2>
+	<div class="card"><span>Argon 18</span><span>5,000</span></div>
+	<div class="card"><span>Bianchi Oltre</span><span>10,000</span></div>
+	<div class="card"><span>BMC TM02</span><span>5,000</span></div>
+	<div class="card"><span>BXT</span><span>5,000</span></div>
+	<div class="card"><span>Canyon Speedmax CFR</span><span>15,000</span></div>
+	<div class="card"><span>Cervelo P3 2014</span><span>5,000</span></div>
+	<div class="card"><span>Cervelo P5X Lamborghini</span><span>10,000</span></div>
+	<div class="card"><span>Cinelli Laser</span><span>5,000</span></div>
+	<div class="card"><span>Colgano Y1Rs SDM5</span><span>7,500</span></div>
+	<div class="card"><span>Colgano Y1Rs Tadej Pogacar</span><span>7,500</span></div>
+	<div class="card"><span>Dolan DF5 (Black)</span><span>7,500</span></div>
+	<div class="card"><span>Dolan DF5 (Red)</span><span>7,500</span></div>
+	<div class="card"><span>Dosnoventa Unseen</span><span>5,000</span></div>
+	<div class="card"><span>Factor Hanzo WF</span><span>15,000</span></div>
+	<div class="card"><span>FFWD Track</span><span>5,000</span></div>
+	<div class="card"><span>Giant Propel 2018</span><span>5,000</span></div>
+	<div class="card"><span>Look 496 (Red)</span><span>5,000</span></div>
+	<div class="card"><span>Look R96</span><span>5,000</span></div>
+	<div class="card"><span>Look L96</span><span>5,000</span></div>
+	<div class="card"><span>Lotus Hope</span><span>15,000</span></div>
+	<div class="card"><span>Lotus Sport 108</span><span>15,000</span></div>
+	<div class="card"><span>Manila Jeprox Gray</span><span>5,000</span></div>
+	<div class="card"><span>Missile Interpro (White)</span><span>5,000</span></div>
+	<div class="card"><span>Norco Auram</span><span>5,000</span></div>
+	<div class="card"><span>Pinarello Pista</span><span>5,000</span></div>
+	<div class="card"><span>Pinarello XTrack</span><span>5,000</span></div>
 
-        cards.forEach(card => {
-            section.appendChild(card);
-        });
-    });
-}
+	</div>
 
-searchBox.addEventListener("input", updateList);
-sortMode.addEventListener("change", updateList);
+	</div>
+
+	<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+	const searchBox = document.getElementById("searchBox");
+	const sortMode = document.getElementById("sortMode");
+
+	function getCardName(card) {
+		return card.querySelector("span:first-child")
+			.textContent
+			.trim();
+		}
+
+		function getCardValue(card) {
+
+			const text = card
+				.querySelector("span:last-child")
+				.textContent
+				.replace(/,/g, "")
+				.trim();
+
+			return parseInt(text) || 0;
+			}
+
+			function updateList() {
+
+				const search =
+					searchBox.value.toLowerCase();
+
+				document
+					.querySelectorAll(".section")
+					.forEach(section => {
+
+						const cards = Array.from(
+							section.querySelectorAll(".card")
+						);
+
+						cards.forEach(card => {
+
+							const bikeName =
+							getCardName(card)
+							.toLowerCase();
+
+							card.style.display =
+							bikeName.includes(search)
+							? "flex"
+							: "none";
+						});
+
+						if (
+							sortMode.value === "value"
+							) {
+
+								cards.sort((a, b) =>
+									getCardValue(b)
+									- getCardValue(a)
+								);
+
+							} else {
+
+	cards.sort((a, b) =>
+		getCardName(a)
+			.localeCompare(
+				getCardName(b)
+			)
+	);
+	}
+
+	cards.forEach(card => {
+		section.appendChild(card);
+	});
+
+	});
+	}
+
+	searchBox.addEventListener(
+	"input",
+	updateList
+);
+
+sortMode.addEventListener(
+	"change",
+	updateList
+);
 
 updateList();
-</script>
-<body>
 
-    <div class="background"></div>
-    <div class="container">
-    <h1>OFFICIAL Cog Bike Value List</h1>
-    <p class="subtitle">Updated June 2026</p>
-    
-    <div class="controls">
-        <input
-            type="text"
-            id="searchBox"
-            placeholder="🔍 Search bikes..."
-        >
-    
-        <select id="sortMode">
-            <option value="alphabetical">Alphabetical</option>
-            <option value="value">Value (Highest First)</option>
-        </select>
-    </div>
+});
 
-    <div class="section bike-section">
-        <h2>Fixie (A-Z)</h2>
+	</script>
 
-        <div class="card"><span>Anchor Bridgestone</span><span>16,500</span></div>
-        <div class="card"><span>Anchor PHM9</span><span>19,500</span></div>
-        <div class="card"><span>Affinity Kissena</span><span>15,000</span></div>
-        <div class="card"><span>Bamboo Bike</span><span>20,000</span></div>
-        <div class="card"><span>BMC TM01</span><span>30,000</span></div>
-        <div class="card"><span>BT Ultra</span><span>35,000</span></div>
-        <div class="card"><span>Cervelo P3</span><span>10,000</span></div>
-        <div class="card"><span>Cervelo P3C</span><span>19,400</span></div>
-        <div class="card"><span>Cervelo T1</span><span>25,000</span></div>
-        <div class="card"><span>Cervelo T3</span><span>30,000</span></div>
-        <div class="card"><span>Cervelo T4</span><span>70,000</span></div>
-        <div class="card"><span>Cinelli 10th Anniversary</span><span>50,000</span></div>
-        <div class="card"><span>Cinelli Mash Gray</span><span>13,000</span></div>
-        <div class="card"><span>Cinelli Mash Parallax</span><span>16,000</span></div>
-        <div class="card"><span>Cinelli Vigorosa</span><span>17,000</span></div>
-        <div class="card"><span>Cinelli Vigorelli</span><span>25,000</span></div>
-        <div class="card"><span>Corima Cougar</span><span>50,000</span></div>
-        <div class="card"><span>Dolan Pre Cursa (BLACK)</span><span>14,000</span></div>
-        <div class="card"><span>Dolan Pre Cursa (GREY)</span><span>14,000</span></div>
-        <div class="card"><span>Dosnoventa Houston (Yellow)</span><span>18,000</span></div>
-        <div class="card"><span>Dosnoventa Maharishi</span><span>30,000</span></div>
-        <div class="card"><span>E11 GAF</span><span>47,000</span></div>
-        <div class="card"><span>FELT TK FRD</span><span>8,000</span></div>
-        <div class="card"><span>FES</span><span>38,000</span></div>
-        <div class="card"><span>Fuji Track</span><span>50,000</span></div>
-        <div class="card"><span>Fuji Track (Red)</span><span>25,100</span></div>
-        <div class="card"><span>Giant Omnium</span><span>20,000</span></div>
-        <div class="card"><span>Ingria Airpusher</span><span>12,700</span></div>
-        <div class="card"><span>Look KG</span><span>40,000</span></div>
-        <div class="card"><span>Look MADISON</span><span>27,200</span></div>
-        <div class="card"><span>Look Rama 496</span><span>25,000</span></div>
-        <div class="card"><span>LOOK 496 JAPAN TEAM 1</span><span>38,000</span></div>
-        <div class="card"><span>LOOK 496 JAPAN TEAM 2</span><span>38,000</span></div>
-        <div class="card"><span>LOOK 496 TRACK (BLACK)</span><span>30,000</span></div>
-        <div class="card"><span>LOOK 564 (OLD)</span><span>20,000</span></div>
-        <div class="card"><span>LOOK 989</span><span>10,000</span></div>
-        <div class="card"><span>LOW// Custom</span><span>30,000</span></div>
-        <div class="card"><span>Manila Jeprox Red</span><span>55,000</span></div>
-        <div class="card"><span>Missile Interpro (GREEN)</span><span>12,000</span></div>
-        <div class="card"><span>Missile Interpro (RED)</span><span>19,000</span></div>
-        <div class="card"><span>MOB Pro</span><span>7,000</span></div>
-        <div class="card"><span>NJS Bridgestone</span><span>10,000</span></div>
-        <div class="card"><span>NJS Panasonic</span><span>40,000</span></div>
-        <div class="card"><span>Littlewing NO22</span><span>11,000</span></div>
-        <div class="card"><span>Pinarello Maat Pista</span><span>34,000</span></div>
-        <div class="card"><span>Planet X</span><span>28,000</span></div>
-        <div class="card"><span>RTS</span><span>88,000</span></div>
-        <div class="card"><span>Skream V3</span><span>25,000</span></div>
-        <div class="card"><span>Specialized Allez Track</span><span>50,000</span></div>
-        <div class="card"><span>Specialized Langster</span><span>17,000</span></div>
-        <div class="card"><span>Talking Terps</span><span>45,000</span></div>
-        <div class="card"><span>Unknown Pulse</span><span>27,000</span></div>
-        <div class="card"><span>Velobike</span><span>70,000</span></div>
-    </div>
-
-    <div class="section">
-        <h2>Road Bikes (A-Z)</h2>
-
-        <div class="card"><span>Cannondale</span><span>15,000</span></div>
-        <div class="card"><span>Canyon Ultimate Fenix Alpecin</span><span>20,500</span></div>
-        <div class="card"><span>Trek Madone</span><span>17,000</span></div>
-    </div>
-
-    <div class="section">
-        <h2>Gamepasses (A-Z)</h2>
-
-        <div class="card"><span>Argon 18</span><span>5,000</span></div>
-        <div class="card"><span>Bianchi Oltre</span><span>10,000</span></div>
-        <div class="card"><span>BMC TM02</span><span>5,000</span></div>
-        <div class="card"><span>BXT</span><span>5,000</span></div>
-        <div class="card"><span>Canyon Speedmax CFR</span><span>15,000</span></div>
-        <div class="card"><span>Cervelo P3 2014</span><span>5,000</span></div>
-        <div class="card"><span>Cervelo P5X Lamborghini</span><span>10,000</span></div>
-        <div class="card"><span>Cinelli Laser</span><span>5,000</span></div>
-        <div class="card"><span>Colgano Y1Rs SDM5</span><span>7,500</span></div>
-        <div class="card"><span>Colgano Y1Rs Tadej Pogacar</span><span>7,500</span></div>
-        <div class="card"><span>Dolan DF5 (Black)</span><span>7,500</span></div>
-        <div class="card"><span>Dolan DF5 (Red)</span><span>7,500</span></div>
-        <div class="card"><span>Dosnoventa Unseen</span><span>5,000</span></div>
-        <div class="card"><span>Factor Hanzo WF</span><span>15,000</span></div>
-        <div class="card"><span>FFWD Track</span><span>5,000</span></div>
-        <div class="card"><span>Giant Propel 2018</span><span>5,000</span></div>
-        <div class="card"><span>Look 496 (Red)</span><span>5,000</span></div>
-        <div class="card"><span>Look R96</span><span>5,000</span></div>
-        <div class="card"><span>Look L96</span><span>5,000</span></div>
-        <div class="card"><span>Lotus Hope</span><span>15,000</span></div>
-        <div class="card"><span>Lotus Sport 108</span><span>15,000</span></div>
-        <div class="card"><span>Manila Jeprox Gray</span><span>5,000</span></div>
-        <div class="card"><span>Missile Interpro (White)</span><span>5,000</span></div>
-        <div class="card"><span>Norco Auram</span><span>5,000</span></div>
-        <div class="card"><span>Pinarello Pista</span><span>5,000</span></div>
-        <div class="card"><span>Pinarello XTrack</span><span>5,000</span></div>
-    </div>
-</div>
-</body>
-</html>
+	</body>
+	</html>
