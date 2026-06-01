@@ -124,3 +124,25 @@ h1{
 .controls select option{
     color:black;
 }
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-title h2 {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.title-line {
+  flex: 1;
+  border-bottom: 1px solid currentColor;
+  opacity: 0.6;
+}
+
+.title-value {
+  font-weight: 700;
+  white-space: nowrap;
+}
