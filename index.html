@@ -32,7 +32,7 @@
 	<a class="top-button" href="https://www.roblox.com/games/100550219954127/Cog" target="_blank" rel="noopener">Game Link</a>
 	<a class="top-button" href="https://www.roblox.com/groups/34646663/Cogs-And-Chainrings" target="_blank" rel="noopener">Group</a>
 	</div>
-	<a class="top-button trade-button" href="https://www.roblox.com/games/119484254343449/Trade-Hub" target="_blank" rel="noopener">Enter Trade Hub</a>
+	<a class="top-button trade-button" href="https://www.roblox.com/games/119484254343449/Trade-Hub" data-roblox-link="roblox://experiences/start?placeId=119484254343449" target="_blank" rel="noopener">Enter Trade Hub</a>
 	</div>
 	<h1>OFFICIAL Cog Bike Value List</h1>
 	</div>
@@ -175,6 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const searchBox = document.getElementById("searchBox");
 	const sortMode = document.getElementById("sortMode");
 	const collapseButtons = document.querySelectorAll(".collapse-toggle");
+	const tradeButton = document.querySelector(".trade-button");
 
 	function getCardName(card) {
 		return card.querySelector("span:first-child")
@@ -274,6 +275,16 @@ collapseButtons.forEach(button => {
 		button.textContent = isCollapsed ? "▶" : "▼";
 		button.setAttribute("aria-expanded", !isCollapsed);
 	});
+});
+
+tradeButton.addEventListener("click", event => {
+	event.preventDefault();
+
+	window.open(tradeButton.href, "_blank", "noopener");
+
+	setTimeout(() => {
+		window.location.href = tradeButton.dataset.robloxLink;
+	}, 500);
 });
 
 updateList();
