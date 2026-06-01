@@ -95,3 +95,32 @@ h1{
     background:rgba(255,255,255,.3);
     border-radius:10px;
 }
+
+.controls{
+    display:flex;
+    gap:12px;
+    margin-bottom:25px;
+}
+
+.controls input,
+.controls select{
+    padding:12px 15px;
+    border:none;
+    border-radius:12px;
+    background:rgba(255,255,255,.08);
+    color:white;
+    backdrop-filter:blur(10px);
+    font-size:15px;
+}
+
+.controls input{
+    flex:1;
+}
+
+.controls input::placeholder{
+    color:rgba(255,255,255,.6);
+}
+
+.controls select option{
+    color:black;
+}
