@@ -1,65 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Bike Values</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
 
-    <div class="background"></div>
+body{
+    min-height:100vh;
+    color:white;
+    overflow-x:hidden;
+}
 
-    <div class="container">
-        <h1>🚲 Bike Value List</h1>
-        <p class="subtitle">Last Updated: June 2026</p>
+.background{
+    position:fixed;
+    inset:0;
 
-        <div class="section">
-            <h2>Featured Bikes</h2>
+    background-image:url("images/background.png");
+    background-size:cover;
+    background-position:center;
 
-            <div class="card">
-                <span>Talking Terps</span>
-                <span>45,000</span>
-            </div>
+    filter:blur(12px) brightness(0.4);
+    transform:scale(1.1);
 
-            <div class="card">
-                <span>Unknown Pulse</span>
-                <span>27,000</span>
-            </div>
+    z-index:-2;
+}
 
-            <div class="card">
-                <span>Velobike</span>
-                <span>70,000</span>
-            </div>
-        </div>
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:50px 20px;
+}
 
-        <div class="section">
-            <h2>Road Bikes (A-Z)</h2>
+h1{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:10px;
 
-            <div class="card">
-                <span>Cannondale</span>
-                <span>15,000</span>
-            </div>
+    text-shadow:
+        0 0 10px rgba(255,255,255,.3);
+}
 
-            <div class="card">
-                <span>Canyon Ultimate Fenix Alpecin</span>
-                <span>20,500</span>
-            </div>
+.subtitle{
+    text-align:center;
+    opacity:.8;
+    margin-bottom:40px;
+}
 
-            <div class="card">
-                <span>Trek Madone</span>
-                <span>17,000</span>
-            </div>
-        </div>
+.section{
+    margin-bottom:35px;
+}
 
-        <div class="section">
-            <h2>Template</h2>
+.section h2{
+    margin-bottom:15px;
+    font-size:1.5rem;
+}
 
-            <div class="card">
-                <span>Bike Name</span>
-                <span>Value</span>
-            </div>
-        </div>
-    </div>
+.card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-</body>
-</html>
+    padding:16px 20px;
+    margin-bottom:10px;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:14px;
+
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+
+    background:rgba(255,255,255,.12);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.25);
+}
+
+.card span:last-child{
+    font-weight:bold;
+    color:#8df0ff;
+}
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:rgba(255,255,255,.3);
+    border-radius:10px;
+}
