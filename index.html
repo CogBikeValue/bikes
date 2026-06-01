@@ -5,14 +5,92 @@
     <title>Bike Value List</title>
     <link rel="stylesheet" href="style.css">
 </head>
+    <script>
+const searchBox = document.getElementById("searchBox");
+const sortMode = document.getElementById("sortMode");
+
+function getCardName(card) {
+    return card.querySelector("span:first-child").textContent.trim();
+}
+
+function getCardValue(card) {
+    const text = card.querySelector("span:last-child")
+        .textContent
+        .replace(/,/g, "")
+        .trim();
+
+    return parseInt(text) || 0;
+}
+
+function updateList() {
+
+    const search = searchBox.value.toLowerCase();
+
+    document.querySelectorAll(".section").forEach(section => {
+
+        const cards = Array.from(
+            section.querySelectorAll(".card")
+        );
+
+        cards.forEach(card => {
+
+            const bikeName =
+                getCardName(card).toLowerCase();
+
+            card.style.display =
+                bikeName.includes(search)
+                ? "flex"
+                : "none";
+        });
+
+        if (sortMode.value === "alphabetical") {
+
+            cards.sort((a,b) =>
+                getCardName(a)
+                .localeCompare(getCardName(b))
+            );
+
+        } else {
+
+            cards.sort((a,b) =>
+                getCardValue(b)
+                - getCardValue(a)
+            );
+
+        }
+
+        cards.forEach(card => {
+            section.appendChild(card);
+        });
+    });
+}
+
+searchBox.addEventListener("input", updateList);
+sortMode.addEventListener("change", updateList);
+
+updateList();
+</script>
 <body>
 
     <div class="background"></div>
     <div class="container">
     <h1>OFFICIAL Cog Bike Value List</h1>
     <p class="subtitle">Updated June 2026</p>
+    
+    <div class="controls">
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="🔍 Search bikes..."
+        >
+    
+        <select id="sortMode">
+            <option value="alphabetical">Alphabetical</option>
+            <option value="value">Value (Highest First)</option>
+        </select>
+    </div>
 
-    <div class="section">
+    <div class="section bike-section">
         <h2>Fixie (A-Z)</h2>
 
         <div class="card"><span>Anchor Bridgestone</span><span>16,500</span></div>
