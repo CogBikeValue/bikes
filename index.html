@@ -13,7 +13,16 @@
 
 	<div class="container">
 
+	<div class="hero">
+	<div class="top-links">
+	<div class="top-link-row">
+	<a class="top-button" href="https://www.roblox.com/games/100550219954127/Cog" target="_blank" rel="noopener">Game Link</a>
+	<a class="top-button" href="https://www.roblox.com/groups/34646663/Cogs-And-Chainrings" target="_blank" rel="noopener">Group</a>
+	</div>
+	<a class="top-button trade-button" href="https://www.roblox.com/games/119484254343449/Trade-Hub" target="_blank" rel="noopener">Enter Trade Hub</a>
+	</div>
 	<h1>OFFICIAL Cog Bike Value List</h1>
+	</div>
 	<p class="subtitle">Updated June 2026</p>
 
 	<div class="controls">
@@ -30,7 +39,9 @@ placeholder="🔍 Search bikes..."
 	</div>
 	<div class="section">
 	<div class="section-title">
+	<button class="collapse-toggle" type="button" aria-label="Toggle Fixed Gear section" aria-expanded="true">▼</button>
   	<h2>Fixed Gear (A-Z)</h2>
+	<span class="section-count"></span>
   	<span class="title-line"></span>
   	<span class="title-value">Value</span>
 	</div>
@@ -92,19 +103,23 @@ placeholder="🔍 Search bikes..."
 	</div>
 <div class="section">
 	<div class="section-title">
+	<button class="collapse-toggle" type="button" aria-label="Toggle Road Bike section" aria-expanded="true">▼</button>
   	<h2>Road Bike (A-Z)</h2>
+	<span class="section-count"></span>
   	<span class="title-line"></span>
   	<span class="title-value">Value</span>
 	</div>
 		
-	<div class="card"><span>Cannondale</span><span>15,000</span></div>
+	<div class="card"><span>Cannondale SS Evo LAB71</span><span>15,000</span></div>
 	<div class="card"><span>Canyon Ultimate Fenix Alpecin</span><span>20,500</span></div>
-	<div class="card"><span>Trek Madone</span><span>17,000</span></div>
+	<div class="card"><span>Trek Madone LIDI</span><span>17,000</span></div>
 
 	</div>
 <div class="section">
 	<div class="section-title">
+	<button class="collapse-toggle" type="button" aria-label="Toggle Gamepass section" aria-expanded="true">▼</button>
   	<h2>Gamepass (A-Z)</h2>
+	<span class="section-count"></span>
   	<span class="title-line"></span>
   	<span class="title-value">Value</span>
 	</div>
@@ -146,6 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	const searchBox = document.getElementById("searchBox");
 	const sortMode = document.getElementById("sortMode");
+	const collapseButtons = document.querySelectorAll(".collapse-toggle");
 
 	function getCardName(card) {
 		return card.querySelector("span:first-child")
@@ -176,18 +192,30 @@ document.addEventListener("DOMContentLoaded", () => {
 						const cards = Array.from(
 							section.querySelectorAll(".card")
 						);
+						const countLabel =
+							section.querySelector(".section-count");
+						let visibleCount = 0;
 
 						cards.forEach(card => {
 
 							const bikeName =
 							getCardName(card)
 							.toLowerCase();
+							const isVisible =
+							bikeName.includes(search);
 
 							card.style.display =
-							bikeName.includes(search)
+							isVisible
 							? "flex"
 							: "none";
+
+							if (isVisible) {
+								visibleCount++;
+							}
 						});
+
+						countLabel.textContent =
+						`${visibleCount} item${visibleCount === 1 ? "" : "s"}`;
 
 						if (
 							sortMode.value === "value"
@@ -224,6 +252,16 @@ sortMode.addEventListener(
 	"change",
 	updateList
 );
+
+collapseButtons.forEach(button => {
+	button.addEventListener("click", () => {
+		const section = button.closest(".section");
+		const isCollapsed = section.classList.toggle("collapsed");
+
+		button.textContent = isCollapsed ? "▶" : "▼";
+		button.setAttribute("aria-expanded", !isCollapsed);
+	});
+});
 
 updateList();
 
